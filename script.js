@@ -29,7 +29,15 @@ const showPopup = function(text){
 
 popupClose.addEventListener("click", closePopup)
 document.addEventListener("click", closePopup)
+document.addEventListener('keydown', (e) => {
+	if (e.code) {
+		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
+		popup.classList.remove("popup_active")
+	}
+ });
 //========================================================================================================================================================
+
+
 // const closePopup2 = function(e){
 // 	console.log(e.target);
 // 	if (e.target.tagName === "BODY") {
@@ -39,12 +47,7 @@ document.addEventListener("click", closePopup)
 // }
 // document.addEventListener("click", closePopup2)
 
-document.addEventListener('keydown', (e) => {
-	if (e.code) {
-		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
-		popup.classList.remove("popup_active")
-	}
- });
+
 
 
 //#hw1 link(git)
