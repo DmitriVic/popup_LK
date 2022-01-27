@@ -14,10 +14,12 @@ images.forEach(el => {
 })
 
 
-// const closePopup = function(e){
-// 	e.target.parentElement.classList.remove("popup_active")
-// 	//e.stopPropagation()
-// }
+const closePopup = function(e){
+	e.target.parentElement.classList.remove("popup_active")
+	if (e.target.tagName === "BODY") {
+		popup.classList.remove("popup_active")
+		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"}
+}
 
 const showPopup = function(text){
 	popup.classList.add("popup_active")
@@ -25,17 +27,17 @@ const showPopup = function(text){
 	popupContent.innerHTML = text;
 }
 
-//popupClose.addEventListener("click", closePopup)
+popupClose.addEventListener("click", closePopup)
+document.addEventListener("click", closePopup)
 //========================================================================================================================================================
-const closePopup2 = function(e){
-	console.log(e.target);
-	if (e.target.tagName === "IMG" || e.target.className === "mini__item" || e.target.className === "popup popup_active" || e.target.className === "popup__content") {}
-	else {
-		popup.classList.remove("popup_active")
-		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
-	}
-}
-document.addEventListener("click", closePopup2)
+// const closePopup2 = function(e){
+// 	console.log(e.target);
+// 	if (e.target.tagName === "BODY") {
+// 		popup.classList.remove("popup_active")
+// 		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"}
+	
+// }
+// document.addEventListener("click", closePopup2)
 
 document.addEventListener('keydown', (e) => {
 	if (e.code) {
