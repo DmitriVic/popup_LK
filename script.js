@@ -15,27 +15,32 @@ images.forEach(el => {
 
 
 const closePopup = function(e){
-	e.target.parentElement.classList.remove("popup_active")
-	if (e.target.tagName === "BODY") {
+	console.log(e.target);
+	//e.target.parentElement.classList.remove("popup_active")
+	//document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
+	if ( e.target.tagName === "BODY" || e.target.className === "popup__close") {
 		popup.classList.remove("popup_active")
 		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"}
+		e.stopPropagation()
 }
 
 const showPopup = function(text){
 	popup.classList.add("popup_active")
 	document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
+	//document.body.style.overflow  = "hidden"
 	popupContent.innerHTML = text;
 }
 
 popupClose.addEventListener("click", closePopup)
-document.addEventListener("click", closePopup)
-document.addEventListener('keydown', (e) => {
+window.addEventListener("click", closePopup)
+window.addEventListener('keydown', (e) => {
 	if (e.code) {
 		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
 		popup.classList.remove("popup_active")
 	}
  });
 //========================================================================================================================================================
+//popup.classList.contains("popup_active") &&
 
 
 // const closePopup2 = function(e){
