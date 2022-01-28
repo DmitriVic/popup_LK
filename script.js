@@ -15,6 +15,7 @@ images.forEach(el => {
 
 const closePopup = function(e){
 	console.log(e.target);
+	console.log(e.currentTarget);
 	//e.target.parentElement.classList.remove("popup_active")
 	//document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
 	if ( e.target.tagName === "BODY" || e.target.className === "popup__close") {
