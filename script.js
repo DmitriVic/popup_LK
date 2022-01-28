@@ -13,25 +13,25 @@ images.forEach(el => {
 	document.body.append(img)
 })
 
-
 const closePopup = function(e){
 	console.log(e.target);
 	//e.target.parentElement.classList.remove("popup_active")
 	//document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
 	if ( e.target.tagName === "BODY" || e.target.className === "popup__close") {
 		popup.classList.remove("popup_active")
-		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"}
-		e.stopPropagation()
+		document.body.style.backgroundColor = "rgba(0, 0, 0, 0)"
+		document.body.style.overflow  = "visible"
+	}
 }
 
 const showPopup = function(text){
 	popup.classList.add("popup_active")
 	document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
-	//document.body.style.overflow  = "hidden"
+	document.body.style.overflow  = "hidden"
 	popupContent.innerHTML = text;
 }
 
-popupClose.addEventListener("click", closePopup)
+//popupClose.addEventListener("click", closePopup)
 window.addEventListener("click", closePopup)
 window.addEventListener('keydown', (e) => {
 	if (e.code) {
